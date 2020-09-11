@@ -1,8 +1,9 @@
-# rta
+# API - .net core
 
-#API - .net core
+- dotnet build
+- dotnet run
 
-#UI - React JS
+# UI - React JS
 
 -npm install
 -npm start
