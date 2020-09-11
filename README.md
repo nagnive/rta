@@ -2,8 +2,6 @@
 
 #API - .net core
 
--
-
 #UI - React JS
 
 -npm install
