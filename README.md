@@ -1,5 +1,10 @@
 # rta
 
-API - .net core
+#API - .net core
 
-UI - React JS
+-
+
+#UI - React JS
+
+-npm install
+-npm start
