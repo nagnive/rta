@@ -1,11 +1,11 @@
 # API - .net core
 
--dotnet build
+### `dotnet build`
 
--dotnet run
+### `dotnet run`
 
 # UI - React JS
 
--npm install
+### `npm install`
 
--npm start
+### npm start`
