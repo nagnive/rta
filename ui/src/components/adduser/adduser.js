@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Button, Form, Container, Row, Col, Jumbotron, Badge } from 'react-bootstrap';
+import { Button, Form, Container, Row, Col, Jumbotron, Alert } from 'react-bootstrap';
 import * as Constants from '../../constants';
 class AddUsers extends Component {
 
@@ -12,7 +12,7 @@ state = {
     add1:"",
     add2:"",
     role:"",
-    status: 4,
+    status: Constants.NEWUSER,
     isAddSuccess: null
   }
 
@@ -30,7 +30,7 @@ handleSubmit = (event) => {
       };
       axios({
         method: "post",
-        url: Constants.API_URL + "/Api/UserInfo",
+        url: Constants.API_URL + "Api/UserInfo",
         data: addReq
       }).then(resp =>  {
           console.log(resp);
@@ -44,14 +44,15 @@ handleSubmit = (event) => {
                 add1:"",
                 add2:"",
                 role:"",
-                status: 4,
+                status: Constants.NEWUSER,
                 isAddSuccess: true
             });
           }
           else{
               this.setState({isAddSuccess: false});
           }
-       
+      }).catch(error => {
+          console.log(error);
       });
 }
 
@@ -82,9 +83,13 @@ render(){
                                     console.log("init")
                                     :
                                     this.state.isAddSuccess ?
-                                    <Badge variant="success" pill>Added user sucessfully</Badge>
+                                    <Alert variant="success" onClick={() => this.setState({isAddSuccess: null})} dismissible>
+                                        <p>User added sucessfully</p>
+                                    </Alert>
                                     :
-                                    <Badge variant="danger" pill>Falied adding user</Badge> 
+                                    <Alert variant="Danger" onClick={() => this.setState({isAddSuccess: null})} dismissible>
+                                        <p>Failed to add user</p>
+                                    </Alert>
                                 }
                                 <Form onSubmit={this.handleSubmit}>
                                     <Form.Row>
@@ -115,7 +120,7 @@ render(){
 
                                         <Form.Group as={Col} controlId="formGridMobile">
                                         <Form.Label>Mobile</Form.Label>
-                                        <Form.Control type="text" 
+                                        <Form.Control type="number" 
                                         value={this.state.mobile}
                                         onChange={e => this.setState({mobile:e.target.value})}
                                         placeholder="Enter Mobile Number" />
@@ -160,7 +165,6 @@ render(){
                         </Col>
                     </Row>
                 </Container>
-                
             </div>
         )
     }
