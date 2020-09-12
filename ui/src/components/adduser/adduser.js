@@ -33,7 +33,6 @@ handleSubmit = (event) => {
         url: Constants.API_URL + "Api/UserInfo",
         data: addReq
       }).then(resp =>  {
-          console.log(resp);
           if(resp.status === 200)
           {
             this.setState({ 
