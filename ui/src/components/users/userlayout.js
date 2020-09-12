@@ -4,9 +4,7 @@ import ApproveUser from './approveusers';
 import UserList from './userlist';
 
 class UserLayout extends Component {
-    constructor(props){
-        super(props);
-    }
+
 
     render(){
         return(
