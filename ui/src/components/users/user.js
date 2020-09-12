@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import UserNav from '../users/usernav';
-import Users from '../users/users';
+import UserNav from './usernav';
+import UserLayout from './userlayout';
 import AddUsers from '../adduser/adduser';
 import { Redirect } from 'react-router-dom';
 import * as Constants from '../../constants';
 
 class User extends Component {
-render(){
+    render(){
         return(
             <div>
                 {
@@ -14,13 +14,13 @@ render(){
                     <Redirect to="/" />
                     : 
                     <div>
-                        <UserNav username={this.props.location.state.username} 
+                        <UserNav role={this.props.location.state.userrole} 
                         isloggedin={this.props.location.state.isloggedin}/>
                         {
                             this.props.location.state.userrole.toString().toLowerCase() === Constants.NORMAL ?
                             <AddUsers role={this.props.location.state.userrole}/>
                             :
-                            <Users role={this.props.location.state.userrole}
+                            <UserLayout role={this.props.location.state.userrole}
                             isloggedin={this.props.location.state.isloggedin}/>
                         }
                     </div>
