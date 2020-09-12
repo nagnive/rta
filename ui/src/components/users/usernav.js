@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Navbar, Nav, Button, Image } from 'react-bootstrap';
 import * as Constants from "../../constants";
 import logo from '../../assets/img/logo.png';
 
@@ -19,16 +18,15 @@ class UserNav extends Component {
         return(
             <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
                 <Navbar.Brand href="#home">
-                <img
-                    src={logo}
-                    width="30"
-                    height="30"
-                    className="d-inline-block align-top"
-                    alt="React Bootstrap logo"
-                />
+                    <Image
+                        src={logo}
+                        width="30"
+                        height="30"
+                        className="d-inline-block align-top"
+                        alt="RTA logo"
+                        thumbnail />{' '}
                     <strong className="mr-auto">User Admin Module</strong>
                 </Navbar.Brand>
-                <Navbar.Collapse>
                 {
                     this.state.loggedinuser === "" ? ""
                     :
@@ -36,12 +34,13 @@ class UserNav extends Component {
                         (Logged in as <strong>{this.state.loggedinuser}</strong>)
                     </Navbar.Text>
                 }
-                </Navbar.Collapse>
-                <Navbar.Collapse className="justify-content-end">
-                    <Nav.Link href="/">
+                <Nav  className="mr-auto">
+                </Nav>
+                <Nav>
+                    <Nav.Link href="/" className="justify-content-end">
                         <Button variant="light">Logout</Button>
                     </Nav.Link>
-                </Navbar.Collapse>
+                </Nav>
           </Navbar>
         )
     }
