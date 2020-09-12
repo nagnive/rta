@@ -58,7 +58,7 @@ class UserList extends Component {
                                     <Jumbotron>
                                         { 
                                             this.state.allusers.length > 0 ? 
-                                                <Table striped bordered hover variant="dark">
+                                                <Table striped bordered hover variant="dark" responsive>
                                                     <thead>
                                                         <tr>
                                                         <th>#</th>
