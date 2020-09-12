@@ -32,7 +32,6 @@ class UserList extends Component {
                 method: "get",
                 url: requrl,
               }).then(resp =>  {
-                console.log(resp);
                 this.setState({
                     allusers : resp.data
                 });
