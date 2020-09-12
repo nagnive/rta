@@ -27,6 +27,7 @@ class UserList extends Component {
 
     getAllUserData(){
         var requrl =  Constants.API_URL + "Api/UserInfo/getallusers";
+        console.log(requrl);
         setTimeout(() => {
             axios({
                 method: "get",

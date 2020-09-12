@@ -53,6 +53,7 @@ class ApproveUsers extends Component {
     getApprovalData(){
         var reqparam = {userrole: this.props.role};
         var requrl =  Constants.API_URL + "Api/UserInfo/approvalusers/"+this.props.role;
+        console.log(requrl);
         setTimeout(() => {
             axios({
                 method: "get",
@@ -60,6 +61,7 @@ class ApproveUsers extends Component {
                 data: null,
                 param:reqparam
               }).then(resp =>  {
+                  console.log(resp);
                 this.setState({
                     users : resp.data
                 });

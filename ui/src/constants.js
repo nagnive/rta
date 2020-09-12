@@ -8,5 +8,5 @@ export const ADMIN = "adminuser";
 export const SUPER = "superuser";
 
 
-export const API_URL = "https://localhost:5001/";
-// export const API_URL = "http://3.236.51.65:8080/";
+//export const API_URL = "https://localhost:5001/";
+ export const API_URL = "http://3.236.51.65:8080/";
