@@ -158,7 +158,7 @@ render(){
                                     </Form.Row>
                                     <Form.Row>
                                         <Col xs="ms-auto">
-                                            <Button block disabled={!this.validateForm()} className="text-center" type="submit">
+                                            <Button variant="danger" block disabled={!this.validateForm()} className="text-center" type="submit">
                                                 Submit
                                             </Button>
                                         </Col>

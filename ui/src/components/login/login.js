@@ -61,8 +61,8 @@ class Login extends Component {
                           <option>SuperUser</option>
                           </Form.Control>
                         </Form.Group>
-                        <Button variant="primary" block disabled={!this.validateForm()} type="submit">
-                          Login
+                        <Button variant="danger" block disabled={!this.validateForm()} type="submit">
+                          Authorize
                         </Button>
                       </form>
                   </Card.Body>
