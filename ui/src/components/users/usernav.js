@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav, Form, Button } from 'react-bootstrap';
+import { Link, NavLink } from 'react-router-dom';
+import { Navbar, Nav, Button } from 'react-bootstrap';
 import * as Constants from "../../constants";
+import logo from '../../assets/img/logo.png';
 
 class UserNav extends Component {
     state = {
@@ -16,21 +17,31 @@ class UserNav extends Component {
 
     render(){
         return(
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
                 <Navbar.Brand href="#home">
+                <img
+                    src={logo}
+                    width="30"
+                    height="30"
+                    className="d-inline-block align-top"
+                    alt="React Bootstrap logo"
+                />
                     <strong className="mr-auto">User Admin Module</strong>
                 </Navbar.Brand>
-                <Nav className="mr-auto">
-                
-                </Nav>
-                <Form inline>
-                    {
-                        this.state.loggedinuser === "" ? ""
-                        :
-                        <Navbar.Brand href="#home">Logged in as - <strong>{this.state.loggedinuser}</strong></Navbar.Brand>
-                    }
-                    <Button variant="light"><Link to="/">Logout</Link></Button>
-                </Form>
+                <Navbar.Collapse>
+                {
+                    this.state.loggedinuser === "" ? ""
+                    :
+                    <Navbar.Text>
+                        (Logged in as <strong>{this.state.loggedinuser}</strong>)
+                    </Navbar.Text>
+                }
+                </Navbar.Collapse>
+                <Navbar.Collapse className="justify-content-end">
+                    <Nav.Link href="/">
+                        <Button variant="light">Logout</Button>
+                    </Nav.Link>
+                </Navbar.Collapse>
           </Navbar>
         )
     }

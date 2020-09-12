@@ -156,9 +156,14 @@ render(){
                                         </Form.Control>
                                         </Form.Group>
                                     </Form.Row>
-                                    <Button block disabled={!this.validateForm()} type="submit">
-                                        Submit
-                                    </Button>
+                                    <Form.Row>
+                                        <Col xs="ms-auto">
+                                            <Button block disabled={!this.validateForm()} className="text-center" type="submit">
+                                                Submit
+                                            </Button>
+                                        </Col>
+                                    </Form.Row>
+                                    
                                 </Form>
                             </Jumbotron>
                         </Col>
